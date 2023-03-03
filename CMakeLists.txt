@@ -13,6 +13,21 @@ add_subdirectory(src)
 # add_compile_definitions("-Wall -g -O0 -Werror")
 # add_compile_options("-Wall -g -O0 -Werror")
 
+option(TEST_TRIE "test_trie" off)
+option(TEST_INST "test_inst" off)
+
+if (DEFINED TEST_TRIE)
+        message(STATUS "TEST_TRIE defined: " ${TEST_TRIE})
+else ()     
+        message(STATUS "TEST_TRIE un-defined: " ${TEST_TRIE})
+endif()
+
+if (DEFINED TEST_INST)
+        message(STATUS "TEST_INST defined: " ${TEST_INST})
+else ()     
+        message(STATUS "TEST_INST un-defined: " ${TEST_INST})
+endif()
+
 SET(CMAKE_BUILD_TYPE "Debug")
 
 SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -O0 -Werror")
